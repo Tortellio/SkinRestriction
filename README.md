@@ -5,8 +5,8 @@ Skin Restriction plugin for Rocketmod Unturned
 This plugin restrict every players skin. It has configurable.
 
 ### Features
-• You can restrict players from equipping any skin.
-• Configurable restrict option.
+- You can restrict players from equipping any skin.
+- Configurable restrict option.
 
 ### Need help?
 Discord: [Tortellio]https://discord.gg/pzQwsew
