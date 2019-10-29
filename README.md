@@ -9,4 +9,4 @@ This plugin restrict every players skin. It has configurable.
 - Configurable restrict option.
 
 ### Need help?
-Discord: [Tortellio]https://discord.gg/pzQwsew
+Discord: [Tortellio](https://discord.gg/pzQwsew)
