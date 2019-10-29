@@ -1,4 +1,5 @@
-﻿using Rocket.Core.Plugins;
+﻿using Rocket.API;
+using Rocket.Core.Plugins;
 using Rocket.Unturned.Permissions;
 using Rocket.Unturned.Player;
 using SDG.Unturned;
@@ -38,8 +39,8 @@ namespace Tortellio.SkinRestriction
                 if (checkPlayer)
                 {
                     UnturnedPlayer uPlayer = UnturnedPlayer.FromCSteamID(Player);
-                    bool CheckAdmin = (Configuration.Instance.IgnoreAdmins && uPlayer.IsAdmin);
-                    if (CheckAdmin) { return; }
+                    bool CheckBypass = (Configuration.Instance.IgnoreAdmins && uPlayer.IsAdmin) || uPlayer.HasPermission(Configuration.Instance.IgnorePermission); ;
+                    if (CheckBypass) { return; }
                     #region SkinType
                     if (Configuration.Instance.AllowItemSkin)
                     {

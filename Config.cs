@@ -5,6 +5,7 @@ namespace Tortellio.SkinRestriction
     public class Config : IRocketPluginConfiguration
     {
         public bool IgnoreAdmins;
+        public string IgnorePermission;
         public bool AllowItemSkin;
         public bool AllowHatSkin;
         public bool AllowMaskSkin;
@@ -16,6 +17,7 @@ namespace Tortellio.SkinRestriction
         public void LoadDefaults()
         {
             IgnoreAdmins = true;
+            IgnorePermission = "sr.bypass";
             AllowItemSkin = true;
             AllowHatSkin = true;
             AllowMaskSkin = true;
