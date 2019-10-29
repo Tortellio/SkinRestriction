@@ -12,14 +12,14 @@ namespace Tortellio.SkinRestriction
         protected override void Load()
         {
             Instance = this;
-            Logger.Log("GroupBank has been loaded!");
+            Logger.Log("SkinRestriction has been loaded!");
             UnturnedPermissions.OnJoinRequested += new UnturnedPermissions.JoinRequested(OnPlayerConnect);
         }
 
         protected override void Unload()
         {
             Instance = null;
-            Logger.Log("GroupBank has been unloaded!");
+            Logger.Log("SkinRestriction has been unloaded!");
             UnturnedPermissions.OnJoinRequested -= new UnturnedPermissions.JoinRequested(this.OnPlayerConnect);
         }
 
