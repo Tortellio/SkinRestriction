@@ -1,7 +1,9 @@
 ﻿using Rocket.Core.Plugins;
 using Rocket.Unturned.Permissions;
+using Rocket.Unturned.Player;
 using SDG.Unturned;
 using Steamworks;
+using System;
 using Logger = Rocket.Core.Logging.Logger;
 
 namespace Tortellio.SkinRestriction
@@ -9,10 +11,14 @@ namespace Tortellio.SkinRestriction
     public class SkinRestriction : RocketPlugin<Config>
     {
         public static SkinRestriction Instance;
+        public static string PluginName = "SkinRestriction";
+        public static string PluginVersion = "1.0.0";
         protected override void Load()
         {
             Instance = this;
             Logger.Log("SkinRestriction has been loaded!");
+            Logger.Log(PluginName + PluginVersion, ConsoleColor.Yellow);
+            Logger.Log("Made by Tortellio", ConsoleColor.Yellow);
             UnturnedPermissions.OnJoinRequested += new UnturnedPermissions.JoinRequested(OnPlayerConnect);
         }
 
@@ -20,6 +26,7 @@ namespace Tortellio.SkinRestriction
         {
             Instance = null;
             Logger.Log("SkinRestriction has been unloaded!");
+            Logger.Log("Visit Tortellio Discord for more! https://discord.gg/pzQwsew");
             UnturnedPermissions.OnJoinRequested -= new UnturnedPermissions.JoinRequested(this.OnPlayerConnect);
         }
 
@@ -30,6 +37,9 @@ namespace Tortellio.SkinRestriction
                 bool checkPlayer = Players.playerID.steamID == Player;
                 if (checkPlayer)
                 {
+                    UnturnedPlayer uPlayer = UnturnedPlayer.FromCSteamID(Player);
+                    bool CheckAdmin = (Configuration.Instance.IgnoreAdmins && uPlayer.IsAdmin);
+                    if (CheckAdmin) { return; }
                     #region SkinType
                     if (Configuration.Instance.AllowItemSkin)
                     {
