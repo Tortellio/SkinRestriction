@@ -5,7 +5,7 @@ namespace Tortellio.SkinRestriction
     public class Config : IRocketPluginConfiguration
     {
         public bool IgnoreAdmins;
-        public string IgnorePermission;
+        public bool AllowMythicalEffect;
         public bool AllowItemSkin;
         public bool AllowHatSkin;
         public bool AllowMaskSkin;
@@ -17,15 +17,15 @@ namespace Tortellio.SkinRestriction
         public void LoadDefaults()
         {
             IgnoreAdmins = true;
-            IgnorePermission = "sr.bypass";
-            AllowItemSkin = true;
-            AllowHatSkin = true;
-            AllowMaskSkin = true;
-            AllowGlassesSkin = true;
-            AllowBackpackSkin = true;
-            AllowShirtSkin = true;
-            AllowVestSkin = true;
-            AllowPantsSkin = true;
+            AllowMythicalEffect = false;
+            AllowItemSkin = false;
+            AllowHatSkin = false;
+            AllowMaskSkin = false;
+            AllowGlassesSkin = false;
+            AllowBackpackSkin = false;
+            AllowShirtSkin = false;
+            AllowVestSkin = false;
+            AllowPantsSkin = false;
         }
     }
 }
