@@ -39,10 +39,6 @@ namespace Tortellio.SkinRestriction
                     bool checkBypass = (Configuration.Instance.IgnoreAdmins && Players.assignedAdmin);
                     if (checkBypass) { return; }
                     #region SkinType
-                    if (!Configuration.Instance.AllowMythicalEffect)
-                    {
-                        Players.skinDynamicProps = null;
-                    }
                     if (!Configuration.Instance.AllowItemSkin)
                     {
                         Players.skinItems = new int[0];
