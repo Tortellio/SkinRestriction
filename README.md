@@ -1,5 +1,5 @@
 # SkinRestriction
-Skin Restriction plugin for Rocketmod Unturned
+a Rocketmod Unturned Plugin
 
 ### About Plugin
 This plugin restrict every players skin.
