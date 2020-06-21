@@ -11,7 +11,8 @@ namespace Tortellio.SkinRestriction
     {
         public static SkinRestriction Instance;
         public static string PluginName = "SkinRestriction";
-        public static string PluginVersion = " 1.0.0";
+        public static string PluginVersion = " 1.0.1";
+
         protected override void Load()
         {
             Instance = this;
@@ -38,6 +39,7 @@ namespace Tortellio.SkinRestriction
                 {
                     bool checkBypass = (Configuration.Instance.IgnoreAdmins && Players.assignedAdmin);
                     if (checkBypass) { return; }
+
                     #region SkinType
                     if (!Configuration.Instance.AllowItemSkin)
                     {
